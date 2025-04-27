@@ -71,6 +71,28 @@ $(function () {
     $('.header').toggleClass('opened');
   });
 
+  $('.booking__date-wrap').click(function () {
+    $('.calendar').toggleClass('opened');
+    if ($(window).width() < 901) $('.shadow__block').addClass('opened');
+  });
+
+  $('.booking__guests-wrap').click(function () {
+    $('.guests').toggleClass('opened');
+    if ($(window).width() < 901) $('.shadow__block').addClass('opened');
+  });
+
+
+  $('.guests__confirm').click(function () {
+    $('.guests').removeClass('opened');
+    $('.shadow__block').removeClass('opened');
+  });
+
+  $('.shadow__block').click(function () {
+    $(this).removeClass('opened');
+    $('.guests').removeClass('opened');
+    $('.calendar').removeClass('opened');
+  });
+
   $('.header__nav li a.anchor').click(function () {
     var scroll_el = $(this).attr('href');
     if ($(scroll_el).legth != 0) {
